@@ -36,109 +36,128 @@ Passo a passo feito para incialização do docker com PostgreSQL 14.4
 
 =================================== CRIAÇÃO DO DOCKER ===================================
 
- - docker pull postgres  //baixar as bibliotecas/dependencias postgreSQL
- - docker run --name PostgresDocker -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres:14.4-alpine   //criar imagem do postgree na versão 14.4-alpine (mais leve)
- - docker ps 	 //para ver os conteiners
- - docker exec -it PostgresDocker bash 	//executar a imagem criada
- - pwd 	//ir para pasta
- - ls 	//ver a estrutura
- - psql 	//deu erro por falta da permissao ao root (admin)
- - psql -U postgres	 // chamar o PSQL com o username "postgres"
+- docker pull postgres  					//baixar as bibliotecas/dependencias postgreSQL
 
- //agora estamos dentro do postgres com acesso a todos comandos
- //e possibilidade para comandos SQL (create database, tables...)
+//criar imagem do postgree na versão 14.4-alpine (mais leve)
+- docker run --name PostgresDocker -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres:14.4-alpine    
 
- - \l 	//comando para listar os schemas
+- docker ps 	 						//para ver os conteiners
+- docker exec -it PostgresDocker bash 			//executar a imagem criada
+- ls 									//ver a estrutura
+- psql 								//deu erro por falta da permissao ao root (admin)
+- psql -U postgres	 					// chamar o PSQL com o username "postgres"
+
+agora estamos dentro do postgres com acesso a todos comandos e possibilidade para comandos SQL
+
  - create database desafio; 	//criando o banco desafio (por os ; pra n dar erro)
- - \l 	//agora podemos ver o banco ja criado
- - \c desafio  	//conectar ao banco "desafio" como o usuario "postgres"
- - \d 	//did not find any relations (ainda não possui nada no banco)
+ - \l 				//agora podemos ver o banco ja criado
+ - \c desafio  			//conectar ao banco "desafio" como o usuario "postgres"
+ - \d 				//did not find any relations (ainda não possui nada no banco)
 
-=================================== CRIAÇÃO DO DOCKER ===================================
+================================= FIM CRIAÇÃO DO DOCKER =================================
 
-//Até aqui criamos o banco dentro de um docker agora vamos conectar nele de fora do docker para testar se deu tudo certo
+============================ Codigos docker para verificar DB ===========================
 
-//Codigos docker para verificar DB
-// docker exec -it nomeImagem bash (executar imagem)
-// pwd
-// psql -U postgres(nomeusuario) (conectar no banco)
-// \l (listar base de dados)
-// create database nome / drop database nome (criar e deletar db)
-// \c nomedatabase (conectar a base de dados)
-// \d listar relacionamentos
-// apos entrar na base de dados (\c nome) pode usar comandos SQL a vontade lembrando de usar ";" no final
- 
-4- instalação do PosgreSQL 14.4.1 x64
-5- testando conexão ao docker pelo SQL SHELL (psql)
-6- Pesquisa windows (SQL SHELL) e abrir o SQL SHELL (psql)
-//responder as perguntas de conexão:
- - Server: localhost
- - Database: postgres
- - Port: 5432
- - Username: postgres
- - Password: root
-// psql(14.4)
-// postgres=#
-// conseguimos conectar ao banco por fora do docker então está tudo ok
-// testando outros comandos
- - \l (mostrou todos os bancos) 
- - \c desafio
-//you are now connected to database "desafio" as user "postgres".
-//desafio=#
- - \d
-//did not find any relations
-(conseguimos conectar ao nosso banco criado no docker de fora dele ja)
+- docker exec -it PostgresDocker(nomeImagem) bash 	//executar imagem
+- pwd
+- psql -U postgres(nomeusuario) 				//conectar no banco
+- \l 									//listar base de dados
+- create database nome / drop database nome 		//criar e deletar db
+- \c desafio(nomedatabase)					//conectar a base de dados
+- \d 									//listar relacionamentos
 
+apos entrar na base de dados (\c nome) pode usar comandos SQL a vontade lembrando de usar ";" no final
+
+==========================================================================================
+
+==================== testando conexão ao docker pelo SQL SHELL (psql) ====================
+
+5- Pesquisa windows (SQL SHELL) e abrir o SQL SHELL (psql)
+
+responder as perguntas de conexão:
+
+- Server: localhost
+- Database: postgres
+- Port: 5432
+- Username: postgres
+- Password: root
+
+psql(14.4)
+postgres=#
+
+conseguimos conectar ao banco por fora do docker então está tudo ok
+testando outros comandos
+
+- \l 			//mostrou todos os bancos 
+- \c desafio 	//conecta no banco desafio
+
+you are now connected to database "desafio" as user "postgres".
+desafio=#
+- \d			//mostrar relações
+(did not find any relations)
+
+conseguimos conectar ao nosso banco criado no docker de fora dele ja
 agora começar parte de Python
 
-1 criar pasta
-2 abrir terminal na pasta (no meu caso estou usando o ubuntu no windows)
-3 comandos
+
+======================================= Python =======================================
+
+1 abrir terminal na pasta (no meu caso estou usando o ubuntu no windows)
+2 comandos para criar o enviroment
 
 ======================================== VENV ========================================
 
- - python3 -m venv venv //criar ambiente
+ - python3 -m venv venv
  - source venv/bin/activate
  - pip install flask flask_sqlal
  - pip install flask_sqlalchemy
  - pip install flask_migrate
- - pip install psycopg2-binary //foi necessário instalar durante a criação do projeto também
+ - pip install psycopg2-binary
  - source venv/bin/activate
 
 ======================================================================================
 
  - code .
 
-//agora estamos com nosso ambiente criado 
-//e estamos no code para poder começar a criar a parte python
+agora estamos com nosso ambiente criado e estamos no code para poder começar a criar a parte python
 
-4 apos setar as configs do banco e as migrações rodar o comando no terminal do code
- - python
- - from app import *
- - db_create_all()
- - exit()
- //migração da base de dados
-5 conectar a base de dados no docker (desafio) e executar (select * from cliente;) //verificar se deu certo o codigo
-// sucesso, migrations foram subidas para o banco e a tabela ja possui codigo, nome, razaosocial, cnpj e data_inclusao
+3 apos setar as configs do banco e as migrações rodar o comando no terminal do code
+
+=========== Migration ==========
+
+- python
+- from app import *
+- db_create_all()
+- exit()
+
+================================
+
+4 conectar a base de dados no docker (desafio) e executar (select * from cliente;) //verificar se deu certo o codigo
+sucesso, migrations foram subidas para o banco e a tabela ja possui codigo, nome, razaosocial, cnpj e data_inclusao
 
 Toda info do por que utilizei cada coisa no programa está no código em si
 
-6 para rodar o código (terminal ubuntu)  <--------- após ter feito a criação do docker
+5 para rodar o código (usei terminal ubuntu)  <--------- após ter feito a criação do docker
 
- - source venv/bin/activate
+- CRIAR VENV PRIMEIRO
 
-//---executar isso apenas se necessitar subir as tabelas ao banco ----
- - python
- - from app import *
- - db.create_all()
- - exit
-//--------------------------------------------------------------------
+- source venv/bin/activate
+
+==== executar isto na 1 vez para subir as tabelas ao banco ====
+- python
+- from app import *
+- db.create_all()
+- exit
+===============================================================
  
 - flask run  //iniciar banco
 
-para usar as rotas o padrão é:
+agora está tudo rodando ^^
+
+============================ Rotas ============================
 
 Criar novo Cliente:
+
 POST http://127.0.0.1:5000/createCli
 body raw JSON
 { 
@@ -147,13 +166,16 @@ body raw JSON
   "cnpj":"novoCNPJ" 
 }
 
-//o codigo é auto gerado pelo sistema e a data de cadastro também
+# o "codigo" e a "data_cadastro" é auto gerado pelo sistema
+
 
 Pegar lista de Clientes:
+
 GET https://127.0.0.1:5000/listCli
 
+===============================================================
+
 Referencias:
-Links utilizados para pesquisa:
 
 https://hub.docker.com/_/postgres
 https://docs.sqlalchemy.org/en/14/core/constraints.html
