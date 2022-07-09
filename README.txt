@@ -94,15 +94,21 @@ agora começar parte de Python
 1 criar pasta
 2 abrir terminal na pasta (no meu caso estou usando o ubuntu no windows)
 3 comandos
+
+======================================== VENV ========================================
+
  - python3 -m venv venv //criar ambiente
  - source venv/bin/activate
- - pip install flask
+ - pip install flask flask_sqlal
  - pip install flask_sqlalchemy
  - pip install flask_migrate
  - pip install psycopg2-binary //foi necessário instalar durante a criação do projeto também
- - pip install pipenv //ambiente do do python
  - source venv/bin/activate
+
+======================================================================================
+
  - code .
+
 //agora estamos com nosso ambiente criado 
 //e estamos no code para poder começar a criar a parte python
 
