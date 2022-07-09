@@ -34,18 +34,18 @@ Passo a passo feito para incialização do docker com PostgreSQL 14.4
 2- instalar o kernel do linux wsl2 para pc x64
 3- abrir CMD
 
-=================================== CRIAÇÃO DO DOCKER ===================================
+=================================== CRIAÇÃO DO DOCKER ============================================
 
-- docker pull postgres  					//baixar as bibliotecas/dependencias postgreSQL
+- docker pull postgres  			//baixar as bibliotecas/dependencias postgreSQL
 
 //criar imagem do postgree na versão 14.4-alpine (mais leve)
 - docker run --name PostgresDocker -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres:14.4-alpine    
 
-- docker ps 	 						//para ver os conteiners
-- docker exec -it PostgresDocker bash 			//executar a imagem criada
-- ls 									//ver a estrutura
-- psql 								//deu erro por falta da permissao ao root (admin)
-- psql -U postgres	 					// chamar o PSQL com o username "postgres"
+- docker ps 	 				//para ver os conteiners
+- docker exec -it PostgresDocker bash 	//executar a imagem criada
+- ls 							//ver a estrutura
+- psql 						//deu erro por falta da permissao ao root (admin)
+- psql -U postgres	 			// chamar o PSQL com o username "postgres"
 
 agora estamos dentro do postgres com acesso a todos comandos e possibilidade para comandos SQL
 
@@ -54,9 +54,9 @@ agora estamos dentro do postgres com acesso a todos comandos e possibilidade par
  - \c desafio  			//conectar ao banco "desafio" como o usuario "postgres"
  - \d 				//did not find any relations (ainda não possui nada no banco)
 
-================================= FIM CRIAÇÃO DO DOCKER =================================
+================================= FIM CRIAÇÃO DO DOCKER ==========================================
 
-============================ Codigos docker para verificar DB ===========================
+============================ Codigos docker para verificar DB ====================================
 
 - docker exec -it PostgresDocker(nomeImagem) bash 	//executar imagem
 - pwd
@@ -66,11 +66,11 @@ agora estamos dentro do postgres com acesso a todos comandos e possibilidade par
 - \c desafio(nomedatabase)					//conectar a base de dados
 - \d 									//listar relacionamentos
 
-apos entrar na base de dados (\c nome) pode usar comandos SQL a vontade lembrando de usar ";" no final
+agora pode usar comandos SQL a vontade lembrando de usar ";" no final
 
-==========================================================================================
+================================================================================================
 
-==================== testando conexão ao docker pelo SQL SHELL (psql) ====================
+==================== testando conexão ao docker pelo SQL SHELL (psql) ==========================
 
 5- Pesquisa windows (SQL SHELL) e abrir o SQL SHELL (psql)
 
@@ -132,7 +132,9 @@ agora estamos com nosso ambiente criado e estamos no code para poder começar a 
 
 ================================
 
-4 conectar a base de dados no docker (desafio) e executar (select * from cliente;) //verificar se deu certo o codigo
+// verificar se deu certo o codigo
+
+4 conectar a base de dados no docker (desafio) e executar (select * from cliente;) 
 sucesso, migrations foram subidas para o banco e a tabela ja possui codigo, nome, razaosocial, cnpj e data_inclusao
 
 Toda info do por que utilizei cada coisa no programa está no código em si
