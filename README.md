@@ -205,6 +205,7 @@ ROTAS
 - Atualizar Cliente:
 
 	PUT http://127.0.0.1:5000/updateCli
+	body raw JSON
 
 		{
 			"codigo":"numCodigo",
@@ -219,7 +220,10 @@ ROTAS
 			"razao_social":"DrZebra"
 		}
 
-- DELETE http://127.0.0.1:5000/deleteCli
+- Deletar Cliente:
+	
+	DELETE http://127.0.0.1:5000/deleteCli
+	body raw JSON
 
 		{
 			"codigo":"8"
