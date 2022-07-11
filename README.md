@@ -21,13 +21,19 @@
 		(Sugestão: SQL Alchemy)
 		
 	d. Criar Migrações para criação da tabela no banco com os campos:
+	
 		i. código (primary_key / not null) ,
-		ii. nome (not null)
-		iii. razão social (not null)
+		
+		ii. nome (not null),
+		
+		iii. razão social (not null),
+		
 		iv. cnpj (not null),
+		
 		v. data_inclusao (datetime / not null)
 		
 	e. Criar um Padrão de Respostas para API, com status_code e mensagens de sucesso ou erro, como por exemplo.
+	
 	{
 		"status": 200,
 		"message": "Cliente criado com sucesso"
