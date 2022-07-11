@@ -214,7 +214,8 @@ ROTAS
 
 **CNPJ e Razão Social estão configurados no back end para não aceitar serem inseridos repetidos tanto no POST quanto no PUT**
 
-- Criar novo Cliente:
+Criar novo Cliente:
+-
 
 **O "codigo" e a "data_cadastro" é auto gerado pelo sistema**
 
@@ -228,13 +229,15 @@ ROTAS
 		}
 
 
-- Pegar lista de Clientes:
+Pegar lista de Clientes:
+-
 
 **Configurei para retornar uma lista JSON com todos os clientes e suas informações**
 
 	GET https://127.0.0.1:5000/listCli
 
-- Atualizar Cliente:
+Atualizar Cliente:
+-
 
 **Pode ser atualizado 1 apenas, 2 ou 3 dados ao mesmo tempo**
 
@@ -254,8 +257,9 @@ ROTAS
 			"razao_social":"DrZebra"
 		}
 
-- Deletar Cliente:
-	
+Deletar Cliente:
+-
+
 	DELETE http://127.0.0.1:5000/deleteCli
 	body raw JSON
 
