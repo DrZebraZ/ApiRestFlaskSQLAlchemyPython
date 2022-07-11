@@ -4,10 +4,15 @@
 	a. https://hub.docker.com/_/postgres
 	
 2. Utilizando Python 3.6+ e o microframework FLASK:
+
 	a. Crie uma API REST utilizando JSON para realizar um CRUD completo em uma tabela CLIENTE
+	
 		i. GET (Lista clientes)
+		
 		ii. POST (Criar cliente)	
+		
 		iii. PUT (Editar cliente)
+		
 		iv. DELETE (Remover cliente)	
 		
 	b. Dê preferência para o modelo de Blueprints do Flask.
