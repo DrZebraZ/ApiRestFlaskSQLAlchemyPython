@@ -89,6 +89,9 @@ conseguimos conectar ao nosso banco criado no docker de fora dele ja
 4.Python
 =
 
+**Informações sobre o codigo em sí estão comentadas dentro do código**
+-
+
 **1 -** abrir terminal na pasta (no meu caso estou usando o ubuntu no windows)
 
 **2 -** comandos para criar o enviroment
@@ -127,8 +130,6 @@ Verificar se deu certo a migration
 
 **4 -** Conectar a base de dados no docker (desafio) e executar (select * from cliente; )  
 sucesso, migrations foram subidas para o banco e a tabela ja possui codigo, nome, razaosocial, cnpj e data_inclusao
-
-**Toda info do por que utilizei cada coisa no programa está no código em si**
 
 **5 -** para rodar o código (usei terminal ubuntu) 
 
