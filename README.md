@@ -176,11 +176,17 @@ sucesso, migrations foram subidas para o banco e a tabela ja possui codigo, nome
 
 COMO RODAR O CÓDIGO
 =
-- CRIAR VENV
+
+- Baixar repositorio
 
 - SUBIR O DOCKER
 
+- Na pasta do repositorio:
+
 **abrir o terminal da pasta onde está os arquivos do codigo**
+
+- CRIAR VENV
+
 - source venv/bin/activate
 
 **executar isto no terminal para subir as tabelas ao banco**
