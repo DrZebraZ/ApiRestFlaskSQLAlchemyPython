@@ -206,7 +206,7 @@ COMO RODAR O CÓDIGO
 ROTAS
 =
 
-**todas rotas estao tratadas para recusar envio sem JSON (exceto GET) JSON vazios ou com algum dado faltante**
+**Todas rotas exceto GET estao tratadas para recusar envio sem JSON, JSON vazios ou com algum dado faltante**
 
 **Nome e Razão Social estão em modo TITULO e são tratados para não possuir espaços duplos e nem começar ou terminar com espaço**
 
@@ -215,6 +215,8 @@ ROTAS
 **CNPJ e Razão Social estão configurados no back end para não aceitar serem inseridos repetidos tanto no POST quanto no PUT**
 
 - Criar novo Cliente:
+
+**O "codigo" e a "data_cadastro" é auto gerado pelo sistema**
 
 	POST http://127.0.0.1:5000/createCli
 	body raw JSON
@@ -225,14 +227,16 @@ ROTAS
 			 "cnpj":"novoCNPJ" 
 		}
 
-**o "codigo" e a "data_cadastro" é auto gerado pelo sistema**
-
 
 - Pegar lista de Clientes:
+
+**Configurei para retornar uma lista JSON com todos os clientes e suas informações**
 
 	GET https://127.0.0.1:5000/listCli
 
 - Atualizar Cliente:
+
+**Pode ser atualizado 1 apenas, 2 ou 3 dados ao mesmo tempo**
 
 	PUT http://127.0.0.1:5000/updateCli
 	body raw JSON
@@ -241,7 +245,7 @@ ROTAS
 			"codigo":"numCodigo",
 			"cnpj/nome/razao_social":"dado"
 		}
-	pode ser atualizado 1 apenas ou os 3 ao mesmo tempo
+	
 
 		{
 			"codigo":"8",
