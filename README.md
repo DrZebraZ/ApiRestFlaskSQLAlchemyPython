@@ -208,7 +208,11 @@ ROTAS
 
 **todas rotas estao tratadas para recusar envio sem JSON (exceto GET) JSON vazios ou com algum dado faltante**
 
-**Todos os dados de nome e razão social estão em modo TITULO e são tratados para não possuir espaços duplos e nem começar ou terminar com espaço**
+**Nome e Razão Social estão em modo TITULO e são tratados para não possuir espaços duplos e nem começar ou terminar com espaço**
+
+**CNPJ está configurado para aceitar apenas entradas com 14 dígitos**
+
+**CNPJ e Razão Social estão configurados no back end para não aceitar serem inseridos repetidos tanto no POST quanto no PUT**
 
 - Criar novo Cliente:
 
