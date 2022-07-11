@@ -109,7 +109,7 @@ agora começar parte de Python
 
  - python3 -m venv venv
  - source venv/bin/activate
- - pip install flask flask_sqlal
+ - pip install flask
  - pip install flask_sqlalchemy
  - pip install flask_migrate
  - pip install psycopg2-binary
