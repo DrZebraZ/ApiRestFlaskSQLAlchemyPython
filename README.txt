@@ -141,6 +141,8 @@ Toda info do por que utilizei cada coisa no programa está no código em si
 
 5 para rodar o código (usei terminal ubuntu)  <--------- após ter feito a criação do docker
 
+===================================== RODAR CODIGO ===============================================
+
 - CRIAR VENV PRIMEIRO
 
 - source venv/bin/activate
@@ -155,6 +157,9 @@ Toda info do por que utilizei cada coisa no programa está no código em si
 - flask run  //iniciar banco
 
 agora está tudo rodando ^^
+
+==================================================================================================
+
 
 ============================ Rotas ============================
 
@@ -175,6 +180,36 @@ Pegar lista de Clientes:
 
 GET https://127.0.0.1:5000/listCli
 
+Atualizar Cliente:
+
+PUT http://127.0.0.1:5000/updateCli
+{
+    "codigo":"numCodigo",
+    "cnpj/nome/razao_social":"dado"
+}
+
+pode ser atualizado 1 apenas ou os 3 ao mesmo tempo
+
+{
+    "codigo":"8",
+    "cnpj":"12345678901258",
+    "nome":"Luis Guilherme",
+    "razao_social":"DrZebra"
+}
+
+DELETE http://127.0.0.1:5000/deleteCli
+
+{
+	"codigo":"8"
+}
+
+
+todas rotas estao tratadas para recusar envio sem JSON (exceto GET)
+JSON vazios ou com algum dado faltante
+
+Todos os dados de nome e razão social estão em modo TITULO e são tratados
+para não possuir espaços duplos e nem começar ou terminar com espaço
+
 ===============================================================
 
 Referencias:
@@ -182,6 +217,8 @@ Referencias:
 https://hub.docker.com/_/postgres
 https://docs.sqlalchemy.org/en/14/core/constraints.html
 https://docs.sqlalchemy.org/en/14/core/type_basics.html
+https://docs.sqlalchemy.org/en/14/orm/session_basics.html
+https://www.w3schools.com/python/python_strings.asp
 https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
 https://blog.geekhunter.com.br/flask-framework-python/
 https://www.digitalocean.com/community/tutorials/processing-incoming-request-data-in-flask-pt
@@ -202,3 +239,4 @@ https://www.youtube.com/watch?v=Ad-inC3mJfU&ab_channel=k0nzebuilds
 https://www.youtube.com/watch?v=aHbE3pTyG-Q&ab_channel=Amigoscode
 https://www.youtube.com/watch?v=Nm1FPcsPnWg&list=PLXmMXHVSvS-BlLA5beNJojJLlpE0PJgCW&index=29&ab_channel=PrettyPrinted
 https://www.youtube.com/watch?v=29OTNdCIrNU&list=PLXmMXHVSvS-BlLA5beNJojJLlpE0PJgCW&index=22&ab_channel=PrettyPrinted
+https://www.delftstack.com/pt/howto/python/python-check-if-character-is-number/#:~:text=na%20declara%C3%A7%C3%A3o%20condicional.-,Use%20o%20m%C3%A9todo%20isdigit()%20para%20verificar%20se%20um%20determinado,todos%20os%20caracteres%20forem%20d%C3%ADgitos.
