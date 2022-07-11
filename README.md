@@ -34,11 +34,11 @@
 		
 	e. Criar um Padrão de Respostas para API, com status_code e mensagens de sucesso ou erro, como por exemplo.
 	
-	{
-		"status": 200,
-		"message": "Cliente criado com sucesso"
-		"error": "null"
-	}
+		{
+			"status": 200,
+			"message": "Cliente criado com sucesso"
+			"error": "null"
+		}
 
 Como resolvi o desafio ^^
 =
