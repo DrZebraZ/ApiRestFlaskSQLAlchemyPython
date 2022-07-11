@@ -219,8 +219,8 @@ Criar novo Cliente:
 
 **O "codigo" e a "data_cadastro" é auto gerado pelo sistema**
 
-	POST http://127.0.0.1:5000/createCli
-	body raw JSON
+POST http://127.0.0.1:5000/createCli
+body raw JSON
 
 		{ 
 			 "nome":"novoNome",
@@ -234,15 +234,15 @@ Pegar lista de Clientes:
 
 **Configurei para retornar uma lista JSON com todos os clientes e suas informações**
 
-	GET https://127.0.0.1:5000/listCli
+GET https://127.0.0.1:5000/listCli
 
 Atualizar Cliente:
 -
 
 **Pode ser atualizado 1 apenas, 2 ou 3 dados ao mesmo tempo**
 
-	PUT http://127.0.0.1:5000/updateCli
-	body raw JSON
+PUT http://127.0.0.1:5000/updateCli
+body raw JSON
 
 		{
 			"codigo":"numCodigo",
@@ -260,8 +260,8 @@ Atualizar Cliente:
 Deletar Cliente:
 -
 
-	DELETE http://127.0.0.1:5000/deleteCli
-	body raw JSON
+DELETE http://127.0.0.1:5000/deleteCli
+body raw JSON
 
 		{
 			"codigo":"8"
