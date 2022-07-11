@@ -31,7 +31,9 @@ Após muita pesquisa (referencias no final)...
 Passo a passo feito para incialização do docker com PostgreSQL 
 
 1- instalar win docker
+
 2- instalar o kernel do linux wsl2 para pc x64
+
 3- abrir CMD
 
 1.CRIAÇÃO DO DOCKER
@@ -153,6 +155,7 @@ sucesso, migrations foram subidas para o banco e a tabela ja possui codigo, nome
 **Toda info do por que utilizei cada coisa no programa está no código em si**
 
 **5 -** para rodar o código (usei terminal ubuntu) 
+
 **6 -** o docker foi usando o cmd mesmo
 
 COMO RODAR O CÓDIGO
