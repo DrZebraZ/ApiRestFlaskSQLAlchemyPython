@@ -112,6 +112,7 @@ conseguimos conectar ao nosso banco criado no docker de fora dele ja
 =
 
 **1 -** abrir terminal na pasta (no meu caso estou usando o ubuntu no windows)
+
 **2 -** comandos para criar o enviroment
 
 VENV
